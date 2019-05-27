@@ -70,7 +70,7 @@ namespace Eigenvalues
         private double ExecuteSqure(double[] list)
         {
             int n = (int)numericUpDownSegments.Value;
-            double l;
+            double l=(double)numericUpDownLeft.Value,r=(double)numericUpDownRight.Value;
             return 0;
         }
         private double ExecuteTrapeze(double[] list)
@@ -83,13 +83,14 @@ namespace Eigenvalues
         private void button1_Click(object sender, EventArgs e)
         {
             double[] polinomialCoeff = new double[(int)numericUpDownRows.Value];
-            
+            for (int j = 0; j < dataGridView1.ColumnCount; j++)
+            {
+                polinomialCoeff[j] = Double.Parse(dataGridView1.Rows[0].Cells[j].Value.ToString());
+            }
+
             if (!radioButtonSqure.Checked)
             {
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                {
-                    polinomialCoeff[j] = Double.Parse(dataGridView1.Rows[0].Cells[j].Value.ToString());
-                }
+                ExecuteSqure(polinomialCoeff);
             }
             else
             {
@@ -99,7 +100,7 @@ namespace Eigenvalues
                     //listF[j] = Double.Parse(dataGridView1.Rows[2].Cells[j].Value.ToString());
                 }
             }
-            double[] denominator = ExecuteSqure(polinomialCoeff);
+            
             string res = "";
             for(int i = 0; i < listX.Length; i++)
             {

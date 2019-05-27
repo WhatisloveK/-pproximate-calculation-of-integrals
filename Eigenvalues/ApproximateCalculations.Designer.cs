@@ -39,13 +39,13 @@
             this.numericUpDownSegments = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDownA = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownB = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownLeft = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownRight = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSegments)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRight)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -110,7 +110,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 112);
+            this.label2.Location = new System.Drawing.Point(12, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 10;
@@ -174,35 +174,35 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Interval";
             // 
-            // numericUpDownA
+            // numericUpDownLeft
             // 
-            this.numericUpDownA.Location = new System.Drawing.Point(321, 126);
-            this.numericUpDownA.Minimum = new decimal(new int[] {
+            this.numericUpDownLeft.Location = new System.Drawing.Point(321, 126);
+            this.numericUpDownLeft.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDownA.Name = "numericUpDownA";
-            this.numericUpDownA.Size = new System.Drawing.Size(37, 20);
-            this.numericUpDownA.TabIndex = 16;
-            this.numericUpDownA.Value = new decimal(new int[] {
+            this.numericUpDownLeft.Name = "numericUpDownLeft";
+            this.numericUpDownLeft.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDownLeft.TabIndex = 16;
+            this.numericUpDownLeft.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // numericUpDownB
+            // numericUpDownRight
             // 
-            this.numericUpDownB.Location = new System.Drawing.Point(364, 126);
-            this.numericUpDownB.Minimum = new decimal(new int[] {
+            this.numericUpDownRight.Location = new System.Drawing.Point(364, 126);
+            this.numericUpDownRight.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDownB.Name = "numericUpDownB";
-            this.numericUpDownB.Size = new System.Drawing.Size(37, 20);
-            this.numericUpDownB.TabIndex = 17;
-            this.numericUpDownB.Value = new decimal(new int[] {
+            this.numericUpDownRight.Name = "numericUpDownRight";
+            this.numericUpDownRight.Size = new System.Drawing.Size(37, 20);
+            this.numericUpDownRight.TabIndex = 17;
+            this.numericUpDownRight.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -213,8 +213,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 381);
-            this.Controls.Add(this.numericUpDownB);
-            this.Controls.Add(this.numericUpDownA);
+            this.Controls.Add(this.numericUpDownRight);
+            this.Controls.Add(this.numericUpDownLeft);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numericUpDownSegments);
@@ -231,8 +231,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSegments)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,8 +251,8 @@
         private System.Windows.Forms.NumericUpDown numericUpDownSegments;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDownA;
-        private System.Windows.Forms.NumericUpDown numericUpDownB;
+        private System.Windows.Forms.NumericUpDown numericUpDownLeft;
+        private System.Windows.Forms.NumericUpDown numericUpDownRight;
     }
 }
 
