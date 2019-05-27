@@ -57,6 +57,7 @@
     <Compile Include="ApproximateCalculations.Designer.cs">
       <DependentUpon>ApproximateCalculations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Polynome.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ApproximateCalculations.resx">

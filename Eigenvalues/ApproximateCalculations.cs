@@ -7,13 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MathNet.Numerics.LinearAlgebra;
+
 namespace Eigenvalues
 {
     public partial class ApproximateCalculations : Form
     {
-        
-      
         public ApproximateCalculations()
         {
             InitializeComponent();
