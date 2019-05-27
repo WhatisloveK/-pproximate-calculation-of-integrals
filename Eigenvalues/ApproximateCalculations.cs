@@ -118,5 +118,10 @@ namespace Eigenvalues
             }
             label2.Text = res;
         }
+
+        private void ApproximateCalculations_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
