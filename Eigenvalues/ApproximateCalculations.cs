@@ -70,7 +70,7 @@ namespace Eigenvalues
         private double ExecuteSqure(double[] list)
         {
             int n = (int)numericUpDownSegments.Value;
-            
+            double l;
             return 0;
         }
         private double ExecuteTrapeze(double[] list)
