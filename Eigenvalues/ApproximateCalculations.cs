@@ -31,22 +31,24 @@ namespace Eigenvalues
         }
        
 
-        private double ExecuteSqure(double[] list)
+        private double ExecuteSqure()
         {
-            int n = (int)numericUpDownSegments.Value;
-            double l=(double)numericUpDownLeft.Value,r=(double)numericUpDownRight.Value;
-            double h = (l - r) / n;
+           
+            double h = (endPoint - startPoint) / numberOfSegments;
             double res = 0;
+            
 
-            for(int i = 1; i <= n; i++)
+            for (double i = startPoint; i <= endPoint-h; i += h)
             {
-
+                res += function(i+h/2);
             }
+            res *= h;
 
             return 0;
         }
         private double ExecuteTrapeze()
         {
+
             double h = (endPoint - startPoint) / numberOfSegments;
             double res = (function(startPoint)+function(endPoint))/ 2;
 
