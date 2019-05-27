@@ -75,7 +75,7 @@ namespace Eigenvalues
         }
         private double ExecuteTrapeze(double[] list)
         {
-            return;
+            return 0;
         }
 
         
