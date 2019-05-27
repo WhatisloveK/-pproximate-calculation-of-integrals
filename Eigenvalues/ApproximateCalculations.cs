@@ -12,48 +12,12 @@ namespace Eigenvalues
 {
     public partial class ApproximateCalculations : Form
     {
+        double startPoint, endPoint;
+        double numberOfSegments;
+
         public ApproximateCalculations()
         {
             InitializeComponent();
-            InitializeDataGridView(2, 2);
-        }
-        private void InitializeDataGridView(int rows, int columns)
-        {
-            dataGridView1.ColumnCount = columns;
-            dataGridView1.ColumnHeadersVisible = true;
-
-            DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
-            columnHeaderStyle.BackColor = Color.Beige;
-            columnHeaderStyle.Font = new Font("Times New Roman", 12, FontStyle.Bold);
-            dataGridView1.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-
-
-            for (int i = 0; i < columns; ++i)
-            {
-                dataGridView1.Columns[i].Width = 64;
-                dataGridView1.Columns[i].Name = (i + 1).ToString();
-            }
-
-            dataGridView1.RowCount = rows + 2;
-            dataGridView1.RowHeadersVisible = true;
-
-            DataGridViewCellStyle rowHeaderStyle = new DataGridViewCellStyle();
-            rowHeaderStyle.BackColor = Color.Beige;
-            rowHeaderStyle.Font = new Font("Times New Roman", 12, FontStyle.Bold);
-            dataGridView1.RowHeadersDefaultCellStyle = rowHeaderStyle;
-
-            //f = new Class26BasedSys();
-            
-            dataGridView1.Rows[0].HeaderCell.Value = "X";
-            dataGridView1.Rows[0].ReadOnly = false;
-            
-            dataGridView1.Rows[rows-1].HeaderCell.Value = "";
-            dataGridView1.Rows[rows-1].ReadOnly = true;
-            dataGridView1.Rows[rows].HeaderCell.Value = "F";
-
-            dataGridView1.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
-            dataGridView1.RowHeadersWidth = 64;
-            
         }
 
         private double function(double x)
@@ -61,13 +25,10 @@ namespace Eigenvalues
             return 0;
         }
 
-        private void buttonSize_Click(object sender, EventArgs e)
+        private double MaxSecondDerivetiveTrapeze()
         {
-            InitializeDataGridView(2, (int)numericUpDownRows.Value);
+            return 0;
         }
-
-
-
        
 
         private double ExecuteSqure(double[] list)
@@ -84,54 +45,47 @@ namespace Eigenvalues
 
             return 0;
         }
-        private double ExecuteTrapeze(double[] list)
+        private double ExecuteTrapeze()
         {
-            return 0;
+            double h = (endPoint - startPoint) / numberOfSegments;
+            double res = (function(startPoint)+function(endPoint))/ 2;
+
+            for(double i = startPoint + h; i <= endPoint; i += h)
+            {
+                res += function(i);
+            }
+            res *= h;
+            res += MaxSecondDerivetiveTrapeze();
+
+            return res;
         }
 
         
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double[] polinomialCoeff = new double[(int)numericUpDownRows.Value];
-            for (int j = 0; j < dataGridView1.ColumnCount; j++)
+            startPoint = (double)numericUpDownLeft.Value;
+            endPoint = (double)numericUpDownRight.Value;
+            numberOfSegments = (double)numericUpDownSegments.Value;
+            double res;
+
+            if (radioButtonSqure.Checked)
             {
-                polinomialCoeff[j] = Double.Parse(dataGridView1.Rows[0].Cells[j].Value.ToString());
+                res=ExecuteSqure(new double[] { 2,3});
+                labelAnswer.Text = res.ToString();
             }
 
-            if (!radioButtonSqure.Checked)
+            else if (radioButtonTrapeze.Checked)
             {
-                ExecuteSqure(polinomialCoeff);
+                res=ExecuteTrapeze();
+                labelAnswer.Text = res.ToString(); 
+
             }
+
             else
             {
-                for (int j = 0; j < dataGridView1.ColumnCount; j++)
-                {
-                    //listX[j] = ChebyshovPolinomial(j,dataGridView1.ColumnCount);
-                    //listF[j] = Double.Parse(dataGridView1.Rows[2].Cells[j].Value.ToString());
-                }
+                MessageBox.Show("Choose the method of an integral calculate!");
             }
-            
-            string res = "";
-            for(int i = 0; i < listX.Length; i++)
-            {
-                int j = 0;
-                double k = denominator[i] * listF[i];
-                res += ((k > 0 ? ((i != 0) ? '+' : ' ') : '-'));
-                res += Math.Abs(Math.Round(k,4));
-                while (j < listX.Length)
-                {
-                    if (i != j)
-                    {
-                        res += "(x " + (listX[j]>0 ? '-' : '+')+" "+Math.Abs(Math.Round(listX[j],4)) + ")";
-                    }
-                    j++;
-                }
-                res += "\n";
-            }
-            label2.Text = res;
         }
-
-        
     }
 }
