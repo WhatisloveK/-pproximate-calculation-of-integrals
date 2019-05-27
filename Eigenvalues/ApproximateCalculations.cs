@@ -44,7 +44,7 @@ namespace Eigenvalues
             }
             res *= h;
 
-            return 0;
+            return res;
         }
         private double ExecuteTrapeze()
         {
@@ -69,21 +69,17 @@ namespace Eigenvalues
             startPoint = (double)numericUpDownLeft.Value;
             endPoint = (double)numericUpDownRight.Value;
             numberOfSegments = (double)numericUpDownSegments.Value;
-            double res;
+            
 
             if (radioButtonSqure.Checked)
             {
-                res=ExecuteSqure(new double[] { 2,3});
-                labelAnswer.Text = res.ToString();
-            }
 
+                labelAnswer.Text = ExecuteSqure().ToString();
+            }
             else if (radioButtonTrapeze.Checked)
             {
-                res=ExecuteTrapeze();
-                labelAnswer.Text = res.ToString(); 
-
+                labelAnswer.Text = ExecuteTrapeze().ToString();
             }
-
             else
             {
                 MessageBox.Show("Choose the method of an integral calculate!");
