@@ -228,7 +228,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ApproximateCalculations";
             this.Text = "Approximate integrals calculation";
-            this.Load += new System.EventHandler(this.ApproximateCalculations_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSegments)).EndInit();

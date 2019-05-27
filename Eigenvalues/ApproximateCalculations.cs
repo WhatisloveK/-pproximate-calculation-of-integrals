@@ -56,6 +56,11 @@ namespace Eigenvalues
             
         }
 
+        private double function(double x)
+        {
+            return;
+        }
+
         private void buttonSize_Click(object sender, EventArgs e)
         {
             InitializeDataGridView(2, (int)numericUpDownRows.Value);
@@ -69,6 +74,14 @@ namespace Eigenvalues
         {
             int n = (int)numericUpDownSegments.Value;
             double l=(double)numericUpDownLeft.Value,r=(double)numericUpDownRight.Value;
+            double h = (l - r) / n;
+            double res = 0;
+
+            for(int i = 1; i <= n; i++)
+            {
+
+            }
+
             return 0;
         }
         private double ExecuteTrapeze(double[] list)
@@ -119,9 +132,6 @@ namespace Eigenvalues
             label2.Text = res;
         }
 
-        private void ApproximateCalculations_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
