@@ -63,6 +63,7 @@ namespace Eigenvalues
 
         private void buttonSize_Click(object sender, EventArgs e)
         {
+
             InitializeDataGridView(2, (int)numericUpDownRows.Value);
         }
 
