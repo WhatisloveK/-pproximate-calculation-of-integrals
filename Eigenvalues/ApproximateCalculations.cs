@@ -71,7 +71,7 @@ namespace Eigenvalues
         {
             int n = (int)numericUpDownSegments.Value;
             
-            return;
+            return 0;
         }
         private double ExecuteTrapeze(double[] list)
         {
