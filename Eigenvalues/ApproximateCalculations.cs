@@ -58,7 +58,7 @@ namespace Eigenvalues
 
         private double function(double x)
         {
-            return;
+            return 0;
         }
 
         private void buttonSize_Click(object sender, EventArgs e)
